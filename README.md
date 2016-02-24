@@ -1,9 +1,9 @@
 ## 添加Debian源
-echo "deb http://ftp.us.debian.org/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
-echo "deb http://debian.ustc.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
-echo "deb http://mirrors.hust.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
-echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
-echo "deb http://debian.bjtu.edu.cn/debian/ jessie main non-free contrib" >> /etc/apt/sources.list 
+	echo "deb http://ftp.us.debian.org/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
+	echo "deb http://debian.ustc.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
+	echo "deb http://mirrors.hust.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
+	echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
+	echo "deb http://debian.bjtu.edu.cn/debian/ jessie main non-free contrib" >> /etc/apt/sources.list 
 
 ## 安装支持库
 	apt-get update && \
@@ -20,12 +20,13 @@ echo "deb http://debian.bjtu.edu.cn/debian/ jessie main non-free contrib" >> /et
 	git clone -b master https://github.com/online2311/Radius.git /opt/toughradius
 
 ## 安装PYPY
-	cd /opt/toughradius/pysetup && unzip distribute-0.7.3.zip && cd distribute-0.7.3 && pypy setup.py install && \
+	
 	cp /opt/toughradius/pysetup/pypy-4.0.0-linux-armhf-raring.tar.bz2 /opt/pypy-4.0.0-linux-armhf-raring.tar.bz2 && \
 	cd /opt && tar -xf pypy-4.0.0-linux-armhf-raring.tar.bz2 && \
     ln -s /opt/pypy-4.0.0-linux-armhf-raring/bin/pypy /usr/local/bin && \
     pypy --version
-
+	
+	cd /opt/toughradius/pysetup && unzip distribute-0.7.3.zip && cd distribute-0.7.3 && pypy setup.py install && \
 	pypy /opt/toughradius/pysetup/get-pip.py && ln -s /opt/pypy-4.0.0-linux-armhf-raring/bin/pip /usr/local/bin && \
 	pypy -m pip install  --upgrade setuptools && \
 	pypy -m pip install  supervisor && \
@@ -33,33 +34,34 @@ echo "deb http://debian.bjtu.edu.cn/debian/ jessie main non-free contrib" >> /et
     ln -s /opt/pypy-4.0.0-linux-armhf-raring/bin/supervisorctl /usr/local/bin
 
 ## 其他系统设置
-	echo "set nocompatible" >> /root/.vimrc && echo "set backspace=2" >> /root/.vimrc
+	echo "set nocompatible" >> /root/.vimrc && echo "set backspace=2" >> /root/.vimrc && \
 	cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 ## 安装PYPY 支持库
-pypy -m  pip install --upgrade pip
-pypy -m  pip install bottle
-pypy -m  pip install Mako
-pypy -m  pip install Beaker
-pypy -m  pip install MarkupSafe
-pypy -m  pip install PyYAML
-pypy -m  pip install Twisted
-pypy -m  pip install treq
-pypy -m  pip install tablib
-pypy -m  pip install cyclone
-pypy -m  pip install six
-pypy -m  pip install autobahn
-pypy -m  pip install pycrypto
-pypy -m  pip install pyOpenSSL>=0.14
-pypy -m  pip install service_identity
-pypy -m  pip install MySQL-python
-pypy -m  pip install SQLAlchemy
-pypy -m  pip install pyzmq
-pypy -m  pip install txzmq
-pypy -m  pip install msgpack-python
-pypy -m  pip install python-memcached
-pypy -m  pip install psutil
-pypy -m  pip install IPy
+	pypy -m  pip install --upgrade pip && \
+	pypy -m  pip install bottle && \
+	pypy -m  pip install Mako && \
+	pypy -m  pip install Beaker && \
+	pypy -m  pip install MarkupSafe && \
+	pypy -m  pip install PyYAML && \
+	pypy -m  pip install Twisted && \
+	pypy -m  pip install treq && \
+	pypy -m  pip install tablib && \
+	pypy -m  pip install cyclone && \
+	pypy -m  pip install six && \
+	pypy -m  pip install autobahn && \
+	pypy -m  pip install pycrypto && \
+	pypy -m  pip install pyOpenSSL>=0.14 && \
+	pypy -m  pip install service_identity && \
+	pypy -m  pip install MySQL-python && \
+	pypy -m  pip install SQLAlchemy && \
+	pypy -m  pip install pyzmq && \
+	pypy -m  pip install txzmq && \
+	pypy -m  pip install msgpack-python && \
+	pypy -m  pip install python-memcached && \
+	pypy -m  pip install psutil && \
+	pypy -m  pip install IPy
+	
 
 ## radius 安装
 
