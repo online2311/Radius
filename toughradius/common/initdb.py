@@ -20,7 +20,7 @@ def init_db(db):
     db.add(node)
 
     params = [
-        ('system_name', u'管理系统名称', u'ToughRADIUS管理控制台'),
+        ('system_name', u'管理系统名称', u'UniFi Cloud Key Radius管理控制台'),
         ('system_ticket_expire_days', u'上网日志保留天数', '90'),
         ('is_debug', u'DEBUG模式', u'0'),
         ('expire_notify_days', '到期提醒提前天数', u'7'),
@@ -29,16 +29,16 @@ def init_db(db):
         ('expire_notify_url', u'到期通知url', u'http://your_notify_url?account={account}&expire={expire}&email={email}&mobile={mobile}'),
         ('expire_addrpool', u'到期提醒下发地址池', u'expire'),
         ('expire_session_timeout', u'到期用户下发最大会话时长(秒)', u'120'),
-        ('smtp_server', u'SMTP服务器地址', u'smtp.mailgun.org'),
+        ('smtp_server', u'SMTP服务器地址', u'smtp.ubnt.com.cn'),
         ('smtp_port', u'SMTP服务器端口', u'25'),
-        ('smtp_user', u'SMTP用户名', u'service@toughradius.org'),
-        ('smtp_pwd', u'SMTP密码', u'service2015'),
+        ('smtp_user', u'SMTP用户名', u'service@ubnt.com.cn'),
+        ('smtp_pwd', u'SMTP密码', u'service'),
         ('smtp_sender', u'SMTP发送人名称', u'运营中心'),
-        ('smtp_from', u'SMTP邮件发送地址', u'service@toughradius.org'),
-        ('radius_bypass', u'Radius认证密码模式', u'0'),
+        ('smtp_from', u'SMTP邮件发送地址', u'service@ubnt.com.cn'),
+        ('radius_bypass', u'Radius认证密码模式', u'1'),
         ('radius_acct_interim_intelval', u'Radius记账间隔(秒)', u'120'),
         ('radius_max_session_timeout', u'Radius最大会话时长(秒)', u'86400'),
-        ('radius_auth_auto_unlock', u'并发自动解锁', '0')
+        ('radius_auth_auto_unlock', u'并发自动解锁', '1')
     ]
 
     for p in params:

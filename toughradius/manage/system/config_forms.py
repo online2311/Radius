@@ -29,8 +29,10 @@ dbtypes = {'mysql': u"mysql",'sqlite':u"sqlite"}
 
 database_form = btforms.Form(
     btforms.Dropdown("echo", args=boolean.items(), description=u"开启数据库DEBUG", help=u"开启此项，可以在控制台打印SQL语句", **input_style),
-    btforms.Textbox("dbtype",description=u"数据库类型", readonly="readonly",**input_style),
-    btforms.Textbox("dburl", description=u"数据库连接字符串", readonly="readonly", **input_style),
+    btforms.Textbox("dbtype",description=u"数据库类型",**input_style),
+	# btforms.Textbox("dbtype",description=u"数据库类型", readonly="readonly",**input_style),
+    btforms.Textbox("dburl", description=u"数据库连接字符串", **input_style),
+    # btforms.Textbox("dburl", description=u"数据库连接字符串", readonly="readonly", **input_style),
     btforms.Textbox("pool_size", description=u"连接池大小", **input_style),
     btforms.Textbox("pool_recycle", description=u"连接池回收间隔（秒）", **input_style),
     # btforms.Textbox("backup_path", description=u"数据库备份路径", **input_style),

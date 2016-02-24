@@ -68,7 +68,7 @@ worker()
 upgrade()
 {
     cd /opt/toughradius
-    git fetch origin stable_v2
+    git fetch origin master
     git reset --hard FETCH_HEAD
     git clean -df
 }
