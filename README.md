@@ -1,48 +1,42 @@
+## 添加Debian源
 echo "deb http://ftp.us.debian.org/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
-echo "deb http://mirrors.163.com/debian/ jessie main non-free contrib" >> /etc/apt/sources.list && \
-echo "deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib" >> /etc/apt/sources.list && \
-echo "deb http://mirrors.163.com/debian/ jessie-backports main non-free contrib" >> /etc/apt/sources.list && \
-echo "deb-src http://mirrors.163.com/debian/ jessie main non-free contrib" >> /etc/apt/sources.list && \
-echo "deb-src http://mirrors.163.com/debian/ jessie-updates main non-free contrib" >> /etc/apt/sources.list && \
-echo "deb-src http://mirrors.163.com/debian/ jessie-backports main non-free contrib" >> /etc/apt/sources.list && \
-echo "deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib" >> /etc/apt/sources.list && \
-echo "deb-src http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib" >> /etc/apt/sources.list
+echo "deb http://debian.ustc.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
+echo "deb http://mirrors.hust.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
+echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
+echo "deb http://debian.bjtu.edu.cn/debian/ jessie main non-free contrib" >> /etc/apt/sources.list 
 
+## 安装支持库
+	apt-get update && \
+	apt-get -y upgrade && \
+	apt-get install -y build-essential && \
+	apt-get install -y software-properties-common && \
+	apt-get install -y byobu curl git htop man unzip vim wget && \
+	apt-get install -y  wget zip libffi-dev openssl libssl-dev git gcc tcpdump && \
+	apt-get install -y  mysql-client libmysqlclient-dev libzmq-dev && \
+	apt-get clean all && \
+	rm -rf /var/lib/apt/lists/*
+  
+## Git Radius 程序至本地
+	git clone -b master https://github.com/online2311/Radius.git /opt/toughradius
 
-
-
-
-  apt-get update && \
-  apt-get -y upgrade && \
-  apt-get install -y build-essential && \
-  apt-get install -y software-properties-common && \
-  apt-get install -y byobu curl git htop man unzip vim wget && \
-  apt-get install -y  wget zip libffi-dev openssl libssl-dev git gcc tcpdump && \
-  apt-get install -y  mysql-client libmysqlclient-dev libzmq-dev && \
-  apt-get clean all && \
-  rm -rf /var/lib/apt/lists/*
-
-git clone -b master https://github.com/online2311/Radius.git /opt/toughradius
-
-cd /opt/toughradius/pysetup && unzip distribute-0.7.3.zip && cd distribute-0.7.3 && pypy setup.py install
-    
-cp /opt/toughradius/pysetup/pypy-4.0.0-linux-armhf-raring.tar.bz2 /opt/pypy-4.0.0-linux-armhf-raring.tar.bz2
-cd /opt && tar -xf pypy-4.0.0-linux-armhf-raring.tar.bz2 && \
+## 安装PYPY
+	cd /opt/toughradius/pysetup && unzip distribute-0.7.3.zip && cd distribute-0.7.3 && pypy setup.py install && \
+	cp /opt/toughradius/pysetup/pypy-4.0.0-linux-armhf-raring.tar.bz2 /opt/pypy-4.0.0-linux-armhf-raring.tar.bz2 && \
+	cd /opt && tar -xf pypy-4.0.0-linux-armhf-raring.tar.bz2 && \
     ln -s /opt/pypy-4.0.0-linux-armhf-raring/bin/pypy /usr/local/bin && \
     pypy --version
 
-pypy /opt/toughradius/pysetup/get-pip.py && ln -s /opt/pypy-4.0.0-linux-armhf-raring/bin/pip /usr/local/bin
-
-pypy -m pip install  --upgrade setuptools
-
-pypy -m pip install  supervisor
-
-ln -s /opt/pypy-4.0.0-linux-armhf-raring/bin/supervisord /usr/local/bin && \
+	pypy /opt/toughradius/pysetup/get-pip.py && ln -s /opt/pypy-4.0.0-linux-armhf-raring/bin/pip /usr/local/bin && \
+	pypy -m pip install  --upgrade setuptools && \
+	pypy -m pip install  supervisor && \
+	ln -s /opt/pypy-4.0.0-linux-armhf-raring/bin/supervisord /usr/local/bin && \
     ln -s /opt/pypy-4.0.0-linux-armhf-raring/bin/supervisorctl /usr/local/bin
 
-echo "set nocompatible" >> /root/.vimrc && echo "set backspace=2" >> /root/.vimrc
-cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+## 其他系统设置
+	echo "set nocompatible" >> /root/.vimrc && echo "set backspace=2" >> /root/.vimrc
+	cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
+## 安装PYPY 支持库
 pypy -m  pip install --upgrade pip
 pypy -m  pip install bottle
 pypy -m  pip install Mako
@@ -67,20 +61,17 @@ pypy -m  pip install python-memcached
 pypy -m  pip install psutil
 pypy -m  pip install IPy
 
+## radius 安装
 
-cp /opt/toughradius/scripts/radiusrun /usr/local/bin/radiusrun
+	cp /opt/toughradius/scripts/radiusrun /usr/local/bin/radiusrun && \
+	chmod +x /usr/local/bin/radiusrun && \
+	/usr/local/bin/radiusrun install
 
-chmod +x /usr/local/bin/radiusrun
-/usr/local/bin/radiusrun install
+## 初始化数据库
+	radiusrun initserv
 
-
-
-
-pypy /opt/toughradius/toughctl --initdb
-
-vi /etc/rc.local
-
-pypy /opt/toughradius/toughctl --standalone
+##  启动Radius全部程序
+	radiusrun standalone
 
 
 

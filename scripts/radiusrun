@@ -9,8 +9,7 @@ install()
     pypy -m pip install https://github.com/online2311/Radiuslib/archive/master.zip --upgrade --no-deps
     pypy -m pip install https://github.com/online2311/RadiusTools/archive/master.zip --upgrade --no-deps
 
-    git clone -b master https://github.com/online2311/Radius.git /opt/toughradius
-
+    
     cp /opt/toughradius/etc/toughradius.json /etc/toughradius.json
     cp /opt/toughradius/etc/supervisord.conf /etc/supervisord.conf
 
