@@ -37,7 +37,7 @@ def initdb():
     local("pypy toughctl --initdb -c ~/toughradius_test.json")
 
 def uplib():
-    local("pypy -m pip install https://github.com/talkincode/toughlib/archive/master.zip --upgrade --no-deps")
+    local("pypy -m pip install https://github.com/online2311/Radiuslib/archive/master.zip --upgrade --no-deps")
 
 def uplib2():
-    local("pypy -m pip install https://github.com/talkincode/txradius/archive/master.zip --upgrade --no-deps")
+    local("pypy -m pip install https://github.com/online2311/RadiusTools/archive/master.zip --upgrade --no-deps")
