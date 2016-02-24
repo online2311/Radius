@@ -22,11 +22,11 @@
         "level": "INFO", 
         "port": 514, 
         "server": "127.0.0.1", 
-        "shost": "toughradius_admin"
+        "shost": "radius_admin"
     }, 
     "system": {
-        "debug": 1, 
-        "secret": "0BOTrVO6WRtkRnKTmM52nKfQpvCGY8vD", 
+        "debug": 0, 
+        "secret": "8hxVEVyepTI1ySHSwOYdc7D1tK5AssmE", 
         "tz": "CST-8"
     },
     "alipay" : {

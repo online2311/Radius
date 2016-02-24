@@ -29,20 +29,20 @@ class DumpHandler(BaseHandler):
     @cyclone.web.authenticated
     def post(self):
         backup_path = self.settings.config.database.backup_path
-        backup_file = "toughradius_db_%s.json.gz" % utils.gen_backep_id()
+        backup_file = "radius_db_%s.json.gz" % utils.gen_backep_id()
         try:
             self.db_backup.dumpdb(os.path.join(backup_path, backup_file))
-            return self.render_json(code=0, msg="backup done!")
+            return self.render_json(code=0, msg="数据备份成功!")
         except Exception as err:
             dispatch.pub(logger.EVENT_EXCEPTION,err)
-            return self.render_json(code=1, msg="backup fail! %s" % (err))
+            return self.render_json(code=1, msg="数据备份失败! %s" % (err))
 
 @permit.route(r"/admin/backup/restore", u"恢复数据", MenuSys, order=5.0003)
 class RestoreHandler(BaseHandler):
     @cyclone.web.authenticated
     def post(self):
         backup_path = self.settings.config.database.backup_path
-        backup_file = "toughradius_db_%s.before_restore.json.gz" % utils.gen_backep_id()
+        backup_file = "radius_db_%s.before_restore.json.gz" % utils.gen_backep_id()
         rebakfs = self.get_argument("bakfs")
         try:
             self.db_backup.dumpdb(os.path.join(backup_path, backup_file))

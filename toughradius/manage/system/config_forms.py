@@ -29,7 +29,7 @@ dbtypes = {'mysql': u"mysql",'sqlite':u"sqlite"}
 
 database_form = btforms.Form(
     btforms.Dropdown("echo", args=boolean.items(), description=u"开启数据库DEBUG", help=u"开启此项，可以在控制台打印SQL语句", **input_style),
-    btforms.Textbox("dbtype", args=dbtypes.items(),description=u"数据库类型",**input_style),
+    btforms.Textbox("dbtype",description=u"数据库类型",**input_style),
 	# btforms.Textbox("dbtype",description=u"数据库类型", readonly="readonly",**input_style),
     btforms.Textbox("dburl", description=u"数据库连接字符串", **input_style),
     # btforms.Textbox("dburl", description=u"数据库连接字符串", readonly="readonly", **input_style),
