@@ -9,8 +9,8 @@ import datetime
 from tablib import Dataset
 from toughradius.manage import models
 from toughradius.manage.base import BaseHandler
-from toughlib.permit import permit
-from toughlib import utils
+from radiuslib.permit import permit
+from radiuslib import utils
 from toughradius.manage.settings import * 
 
 @permit.route(r"/admin/customer/acceptlog", u"用户受理日志",MenuUser, order=3.0000, is_menu=True)

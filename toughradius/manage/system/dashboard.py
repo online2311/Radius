@@ -10,9 +10,9 @@ import cyclone.auth
 import cyclone.escape
 import cyclone.web
 from toughradius.manage.base import BaseHandler
-from txradius import statistics
-from toughlib.permit import permit
-from toughlib import utils
+from radiustools import statistics
+from radiuslib.permit import permit
+from radiuslib import utils
 from collections import deque
 from toughradius.manage import models
 from toughradius.manage.settings import * 

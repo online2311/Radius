@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from toughlib import choosereactor
+from radiuslib import choosereactor
 choosereactor.install_optimal_reactor(True)
 from twisted.internet import reactor
 from twisted.python import log
 import argparse
-from toughlib import config as iconfig
-from toughlib import dispatch,logger
-from toughlib.dbengine import get_engine
+from radiuslib import config as iconfig
+from radiuslib import dispatch,logger
+from radiuslib.dbengine import get_engine
 from toughradius.common import initdb as init_db
 from toughradius.manage import httpd
 from toughradius.manage import radiusd

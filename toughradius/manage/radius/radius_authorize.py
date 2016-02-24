@@ -3,10 +3,10 @@
 import datetime
 import decimal
 import traceback
-from toughlib import  utils, logger, dispatch
+from radiuslib import  utils, logger, dispatch
 from toughradius.manage import models
 from toughradius.manage.settings import *
-from toughlib.utils import timecast
+from radiuslib.utils import timecast
 from toughradius.manage.radius.radius_basic import  RadiusBasic
 
 class RadiusAuth(RadiusBasic):

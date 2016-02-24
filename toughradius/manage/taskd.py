@@ -6,10 +6,10 @@ import time
 from twisted.python import log
 from twisted.internet import reactor
 from sqlalchemy.orm import scoped_session, sessionmaker
-from toughlib import logger, utils,dispatch
+from radiuslib import logger, utils,dispatch
 from toughradius.manage import models
-from toughlib.dbengine import get_engine
-from toughlib import db_cache as cache
+from radiuslib.dbengine import get_engine
+from radiuslib import db_cache as cache
 from toughradius.manage.tasks import (
     expire_notify, ddns_update, radius_stat, online_stat,flow_stat
 )

@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #coding=utf-8
 
-from toughlib import utils, apiutils
-from toughlib.permit import permit
+from radiuslib import utils, apiutils
+from radiuslib.permit import permit
 from toughradius.manage.api.apibase import ApiHandler
 from toughradius.manage import models
 from toughradius.manage.radius.radius_authorize import RadiusAuth

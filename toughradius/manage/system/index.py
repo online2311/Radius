@@ -7,7 +7,7 @@ import datetime
 import time
 from beaker.cache import cache_managers
 from toughradius.manage.base import BaseHandler
-from toughlib.permit import permit
+from radiuslib.permit import permit
 from toughradius.manage import models
 from toughradius.manage.settings import * 
 import psutil

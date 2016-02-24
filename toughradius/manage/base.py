@@ -11,14 +11,14 @@ import cyclone.web
 import tempfile
 import traceback
 from cyclone.util import ObjectDict
-from toughlib import utils
-from toughlib.paginator import Paginator
+from radiuslib import utils
+from radiuslib.paginator import Paginator
 from toughradius import __version__ as sys_version
-from toughlib.permit import permit
+from radiuslib.permit import permit
 from toughradius.manage.settings import *
 from toughradius.manage import models
-from toughlib import db_session as session
-from toughlib import dispatch,logger
+from radiuslib import db_session as session
+from radiuslib import dispatch,logger
 
 class BaseHandler(cyclone.web.RequestHandler):
 

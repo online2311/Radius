@@ -11,8 +11,8 @@ from hashlib import md5
 from toughradius.manage import models
 from toughradius.manage.customer import customer_forms
 from toughradius.manage.customer.customer import CustomerHandler
-from toughlib.permit import permit
-from toughlib import utils, dispatch,db_cache
+from radiuslib.permit import permit
+from radiuslib import utils, dispatch,db_cache
 from toughradius.manage.settings import * 
 from toughradius.manage.events.settings import ACCOUNT_OPEN_EVENT
 

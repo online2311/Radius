@@ -9,17 +9,17 @@ from twisted.python import log
 from twisted.internet import reactor
 from mako.lookup import TemplateLookup
 from sqlalchemy.orm import scoped_session, sessionmaker
-from toughlib import logger, utils, dispatch
+from radiuslib import logger, utils, dispatch
 from toughradius.manage import models
 from toughradius.manage import base
-from toughlib.dbengine import get_engine
-from toughlib.permit import permit, load_events, load_handlers
+from radiuslib.dbengine import get_engine
+from radiuslib.permit import permit, load_events, load_handlers
 from toughradius.manage.settings import *
-from toughlib import db_session as session
-from toughlib import db_cache as cache
-from toughlib import dispatch
-from toughlib.dbutils import make_db
-from toughlib.db_backup import DBBackup
+from radiuslib import db_session as session
+from radiuslib import db_cache as cache
+from radiuslib import dispatch
+from radiuslib.dbutils import make_db
+from radiuslib.db_backup import DBBackup
 import toughradius
 
 class HttpServer(cyclone.web.Application):

@@ -7,9 +7,9 @@ import cyclone.auth
 import cyclone.escape
 import cyclone.web
 
-from toughlib import utils
+from radiuslib import utils
 from toughradius.manage.base import BaseHandler
-from toughlib.permit import permit
+from radiuslib.permit import permit
 from toughradius.manage import models
 from toughradius.manage.system import operator_form
 from toughradius.manage.system.operator_form import opr_status_dict

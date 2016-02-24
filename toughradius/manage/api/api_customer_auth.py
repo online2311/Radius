@@ -2,10 +2,10 @@
 #coding=utf-8
 import time
 import traceback
-from toughlib.btforms import dataform
-from toughlib.btforms import rules
-from toughlib import utils, apiutils, dispatch
-from toughlib.permit import permit
+from radiuslib.btforms import dataform
+from radiuslib.btforms import rules
+from radiuslib import utils, apiutils, dispatch
+from radiuslib.permit import permit
 from toughradius.manage.api.apibase import ApiHandler
 from toughradius.manage import models
 from hashlib import md5

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #coding:utf-8
-from toughlib.dbutils import make_db
+from radiuslib.dbutils import make_db
 from toughradius.manage import models
 
 class TaseBasic:

@@ -2,8 +2,8 @@
 #coding=utf-8
 import time
 import traceback
-from toughlib import utils, apiutils, dispatch
-from toughlib.permit import permit
+from radiuslib import utils, apiutils, dispatch
+from radiuslib.permit import permit
 from toughradius.manage.api.apibase import ApiHandler
 from toughradius.manage import models
 

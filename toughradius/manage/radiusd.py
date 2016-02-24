@@ -10,16 +10,16 @@ from twisted.internet import protocol
 from twisted.internet import reactor
 from twisted.internet.threads import deferToThread
 from twisted.internet import defer
-from toughlib import utils
-from toughlib import mcache
-from toughlib import logger,dispatch
-from toughlib import db_cache as cache
-from toughlib.dbengine import get_engine
-from txradius.radius import dictionary
-from txradius.radius import packet
-from txradius.radius.packet import PacketError
-from txradius import message
-from toughlib.utils import timecast
+from radiuslib import utils
+from radiuslib import mcache
+from radiuslib import logger,dispatch
+from radiuslib import db_cache as cache
+from radiuslib.dbengine import get_engine
+from radiustools.radius import dictionary
+from radiustools.radius import packet
+from radiustools.radius.packet import PacketError
+from radiustools import message
+from radiuslib.utils import timecast
 from toughradius.manage import models
 from toughradius.manage.settings import *
 from toughradius.manage.radius.plugins import mac_parse,vlan_parse, rate_process

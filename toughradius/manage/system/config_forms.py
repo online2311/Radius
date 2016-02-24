@@ -1,8 +1,8 @@
 # coding:utf-8
-from toughlib import btforms
-from toughlib.btforms import dataform
-from toughlib.btforms import rules
-from toughlib.btforms.rules import button_style, input_style
+from radiuslib import btforms
+from radiuslib.btforms import dataform
+from radiuslib.btforms import rules
+from radiuslib.btforms.rules import button_style, input_style
 
 boolean = {0: u"否", 1: u"是"}
 booleans = {'0': u"否", '1': u"是"}

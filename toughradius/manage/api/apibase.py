@@ -8,7 +8,7 @@ import time
 import traceback
 from hashlib import md5
 from cyclone.util import ObjectDict
-from toughlib import utils, apiutils, dispatch, logger
+from radiuslib import utils, apiutils, dispatch, logger
 from toughradius.manage.base import BaseHandler
 
 

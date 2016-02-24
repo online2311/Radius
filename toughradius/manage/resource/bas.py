@@ -8,8 +8,8 @@ import cyclone.web
 from toughradius.manage import models
 from toughradius.manage.base import BaseHandler
 from toughradius.manage.resource import bas_forms
-from toughlib.permit import permit
-from toughlib import utils
+from radiuslib.permit import permit
+from radiuslib import utils
 from toughradius.manage.settings import * 
 
 @permit.route(r"/admin/bas", u"接入设备管理",MenuRes, order=2.0000, is_menu=True)

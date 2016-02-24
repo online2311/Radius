@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
-from toughlib import btforms
-from toughlib.btforms import rules
-from toughlib.btforms.rules import button_style, input_style
+from radiuslib import btforms
+from radiuslib.btforms import rules
+from radiuslib.btforms.rules import button_style, input_style
 
 opr_status_dict = {0: u'正常', 1: u"停用"}
 

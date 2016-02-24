@@ -29,9 +29,8 @@
 - 详细的操作日志记录，条件查询。
 
 # 安装教程
-	本教程仅适用于用于UniFi Cloud Key[http://www.ubnt.com.cn/unifi/unifi-cloud-key/]设备上的Radius安装与使用，
+[本教程仅适用于UniFi Cloud Key](#) (http://www.ubnt.com.cn/unifi/unifi-cloud-key/)设备上的Radius安装与使用，
 	
-[TOUGHRADIUS 商业授权](#) (https://github.com/talkincode/ToughRADIUS/blob/master/Commerical-license.rst)
 ## 添加Debian源
 	echo "deb http://ftp.us.debian.org/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
 	echo "deb http://debian.ustc.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \

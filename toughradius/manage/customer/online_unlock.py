@@ -5,13 +5,13 @@ import cyclone.web
 import datetime
 from toughradius.manage import models
 from toughradius.manage.base import BaseHandler
-from toughlib.permit import permit
-from toughlib import utils
-from toughlib.storage import Storage
+from radiuslib.permit import permit
+from radiuslib import utils
+from radiuslib.storage import Storage
 from toughradius.manage.radius import radius_acct_stop
 from toughradius.manage.settings import * 
-from txradius import authorize
-from txradius.radius import dictionary
+from radiustools import authorize
+from radiustools.radius import dictionary
 import toughradius
 
 @permit.route(r"/admin/customer/online/unlock", u"用户在线解锁",MenuUser, order=4.0001)
