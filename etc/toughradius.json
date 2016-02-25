@@ -5,9 +5,9 @@
     }, 
     "conf_file": "toughradius.json", 
     "database": {
-        "backup_path": "/var/toughradius/data", 
+        "backup_path": "/data/toughradius/backup", 
         "dbtype": "sqlite", 
-        "dburl": "sqlite:////var/toughradius/toughradius.sqlite3", 
+        "dburl": "sqlite:////data/toughradius/toughradius.sqlite3", 
         "echo": 0, 
         "pool_recycle": 300, 
         "pool_size": 120

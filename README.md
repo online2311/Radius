@@ -32,9 +32,7 @@
 本教程仅适用于UniFi Cloud Key设备上的Radius安装与使用，
 	
 ## 添加Debian源
-	echo "deb http://ftp.us.debian.org/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
 	echo "deb http://debian.ustc.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
-	echo "deb http://mirrors.hust.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
 	echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ jessie main contrib non-free" >> /etc/apt/sources.list && \
 	echo "deb http://debian.bjtu.edu.cn/debian/ jessie main non-free contrib" >> /etc/apt/sources.list 
 

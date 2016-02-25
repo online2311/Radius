@@ -30,8 +30,8 @@ def check_env(config):
         backup_path = config.database.backup_path
         if not os.path.exists(backup_path):
             os.system("mkdir -p  %s" % backup_path)
-        if not os.path.exists("/var/toughradius"):
-            os.system("mkdir -p /var/toughradius")
+        if not os.path.exists("/data/toughradius"):
+            os.system("mkdir -p /data/toughradius")
     except Exception as err:
         import traceback
         traceback.print_exc()

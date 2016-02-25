@@ -17,13 +17,13 @@ install()
 
 initserv()
 {
-    if [ ! -f "/var/toughradius/data" ];then
-        mkdir -p /var/toughradius/data
+    if [ ! -f "/data/toughradius/backup" ];then
+        mkdir -p /data/toughradius/backup
     fi
 
-    if [ ! -f "/var/toughradius/.install" ];then
+    if [ ! -f "/data/toughradius/.install" ];then
         pypy /opt/toughradius/toughctl --initdb
-        echo "ok" > /var/toughradius/.install
+        echo "ok" > /data/toughradius/.install
         echo "init database ok!"
     fi
 
