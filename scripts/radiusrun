@@ -67,7 +67,7 @@ worker()
 upgrade()
 {
     cd /opt/toughradius
-    git fetch origin master
+    git fetch origin UCK
     git reset --hard FETCH_HEAD
     git clean -df
 }
@@ -75,7 +75,7 @@ upgrade()
 upgrade_dev()
 {
     cd /opt/toughradius
-    git fetch origin master
+    git fetch origin UCK
     git reset --hard FETCH_HEAD
     git clean -df
 }

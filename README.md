@@ -48,7 +48,7 @@
 	rm -rf /var/lib/apt/lists/*
   
 ## Git Radius代码至本地
-	git clone -b master https://github.com/online2311/Radius.git /opt/toughradius
+	git clone -b UCK https://github.com/online2311/Radius.git /opt/toughradius
 
 ## 安装ARM架构pypy及pip、distribute
 	cp /opt/toughradius/pysetup/pypy-4.0.0-linux-armhf-raring.tar.bz2 /opt/pypy-4.0.0-linux-armhf-raring.tar.bz2 && \
